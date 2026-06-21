@@ -206,12 +206,12 @@ function onEachFeature(feature, layer) {
     }
 
     // Gán Tooltip (Lưu ý sửa interactive: false để tránh lỗi liệt mouseover)
-    layer.bindTooltip(feature.properties.ten_xa || "Không tên", {
-        sticky: true,
-        interactive: false, 
-        className: 'hover-popup',
-        direction: 'top'
-    });
+    // layer.bindTooltip(feature.properties.ten_xa || "Không tên", {
+    //     sticky: true,
+    //     interactive: false, 
+    //     className: 'hover-popup',
+    //     direction: 'top'
+    // });
 
     // Gán Popup khi click
     // layer.bindPopup(`${feature.properties.ten_xa || 'Chưa cập nhật'}`, {
@@ -221,17 +221,17 @@ function onEachFeature(feature, layer) {
     // Sự kiện tương tác chuột
     layer.on({
         mouseover: function (e) {
-            if (isAnimating) return; 
-            if (e.target !== selectedLayer) {
-                const styleOnHover = e.target.feature.properties.highlight === true ? highlightStyle : hoverStyle;
-                e.target.setStyle(styleOnHover);
-            }
+            // if (isAnimating) return; 
+            // if (e.target !== selectedLayer) {
+            //     const styleOnHover = e.target.feature.properties.highlight === true ? highlightStyle : hoverStyle;
+            //     e.target.setStyle(styleOnHover);
+            // }
         },
         mouseout: function (e) {
-            // Trả về style mặc định khi di chuột ra ngoài
-            if (e.target !== selectedLayer) {
-                geoJsonXaPhuongLayer.resetStyle(e.target);
-            }
+            // // Trả về style mặc định khi di chuột ra ngoài
+            // if (e.target !== selectedLayer) {
+            //     geoJsonXaPhuongLayer.resetStyle(e.target);
+            // }
         }
     });
 }
@@ -252,17 +252,17 @@ function onEachFeature(feature, layer) {
   
   
   map.on('click', function () {
-            if (selectedLayer) {
-                // **CHANGED**: Reset the selected layer to its correct base style before deselecting
-                if (selectedLayer.feature.properties.highlight === true) {
-                    selectedLayer.setStyle(highlightStyle);
-                } else {
-                    selectedLayer.setStyle(defaultStyle);
-                }
-                selectedLayer = null;
-                map.closePopup();
-                $('#area-selector').val("").trigger('change.select2');
-            }
+            // if (selectedLayer) {
+            //     // **CHANGED**: Reset the selected layer to its correct base style before deselecting
+            //     if (selectedLayer.feature.properties.highlight === true) {
+            //         selectedLayer.setStyle(highlightStyle);
+            //     } else {
+            //         selectedLayer.setStyle(defaultStyle);
+            //     }
+            //     selectedLayer = null;
+            //     map.closePopup();
+            //     $('#area-selector').val("").trigger('change.select2');
+            // }
         });
 
 
