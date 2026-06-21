@@ -455,7 +455,7 @@ function onSelectProject(key) {
             layers[k].setStyle({ color: p.color, weight: 8, opacity: 0.9 });
             layers[k].closePopup(); // đóng hết popup khi chọn "all"
         } else if (k === key) {
-            layers[k].setStyle({ color: p.color, weight: 8, opacity: 1 });
+            layers[k].setStyle({ color: p.color, weight: 10, opacity: 1 });
             layers[k].bringToFront();
         } else {
             layers[k].setStyle({ color: p.color, weight: 8, opacity: 0.6 });
