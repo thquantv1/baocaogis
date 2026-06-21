@@ -452,13 +452,13 @@ function onSelectProject(key) {
     Object.keys(layers).forEach(function(k) {
         var p = PROJECTS[k];
         if (key === 'all') {
-            layers[k].setStyle({ color: p.color, weight: 5, opacity: 0.9 });
+            layers[k].setStyle({ color: p.color, weight: 8, opacity: 0.9 });
             layers[k].closePopup(); // đóng hết popup khi chọn "all"
         } else if (k === key) {
             layers[k].setStyle({ color: p.color, weight: 8, opacity: 1 });
             layers[k].bringToFront();
         } else {
-            layers[k].setStyle({ color: p.color, weight: 3, opacity: 0.6 });
+            layers[k].setStyle({ color: p.color, weight: 8, opacity: 0.6 });
             layers[k].closePopup(); // đóng popup của các line không được chọn
         }
     });
